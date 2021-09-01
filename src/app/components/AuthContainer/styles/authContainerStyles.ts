@@ -1,5 +1,5 @@
 import {Theme} from "@material-ui/core";
-import {blackColor, hexToRgb, whiteColor} from "../../../../assets/styles/globalStyles";
+import {blackColor, container, hexToRgb, whiteColor} from "../../../../assets/styles/globalStyles";
 
 export const authContainerStyles = (theme: Theme) => ({
     pageHeader: {
@@ -24,6 +24,15 @@ export const authContainerStyles = (theme: Theme) => ({
             left: "0",
             top: "0",
             content: '""'
+        }
+    },
+    title: {
+        margin: "2rem 0 0",
+    }, container: {
+        ...container,
+        zIndex: "4",
+        [theme.breakpoints.down("sm")]: {
+            paddingBottom: "100px"
         }
     },
 });

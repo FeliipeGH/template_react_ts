@@ -4,14 +4,14 @@ import logo from "../../../assets/img/main/logo.png";
 import {AppBarLinks} from "../appBarLinks/AppBarLinks";
 import {makeStyles} from "@material-ui/core/styles";
 import {authContainerStyles} from "./styles/authContainerStyles";
-import {Box} from "@material-ui/core";
+import {Box, Card, Grid, Typography} from "@material-ui/core";
 import landingImage from "../../../assets/img/main/landing.jpg";
 import {AuthContainerInterface} from "./interfaces/AuthContainerInterface";
 import {AuthFooter} from "../AuthFooter/AuthFooter";
 
 // @ts-ignore
 const useStyles = makeStyles(authContainerStyles);
-export const AuthContainer = ({children}: AuthContainerInterface) => {
+export const AuthContainer = ({children, title}: AuthContainerInterface) => {
     const classes = useStyles();
 
     return (
@@ -24,7 +24,18 @@ export const AuthContainer = ({children}: AuthContainerInterface) => {
                 backgroundSize: "cover",
                 backgroundPosition: "top center"
             }}>
-                {children}
+                <Box className={classes.container}>
+                    <Grid container justifyContent="center">
+                        <Grid item xs={12} sm={12} md={4}>
+                            <Card>
+                                <Typography variant="h5" align="center" className={classes.title}>
+                                    {title}
+                                </Typography>
+                                {children}
+                            </Card>
+                        </Grid>
+                    </Grid>
+                </Box>
             </Box>
             <AuthFooter/>
         </div>

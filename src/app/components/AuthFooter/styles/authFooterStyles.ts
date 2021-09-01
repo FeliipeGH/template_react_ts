@@ -3,7 +3,7 @@ import {ColorList} from "../../../theme/ColorList";
 
 export const authFooterStyles = (theme: Theme) => ({
     socialMediaLink: {
-        margin: "1rem 0",
+        margin: "0.25rem 0",
         display: "inline-flex",
         alignItems: "center",
         color: "black",
