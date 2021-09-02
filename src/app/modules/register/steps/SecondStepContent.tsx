@@ -3,23 +3,24 @@ import {makeStyles} from "@material-ui/core/styles";
 import {loginStyles} from "../../login/styles/loginStyles";
 import {MaterialInput} from "../../../components/MaterialInput/MaterialInput";
 import FaceIcon from "@material-ui/icons/Face";
-import {useForm} from "react-hook-form";
-import {Box, Button, Typography} from "@material-ui/core";
-import {FIRST_STEP} from "../hooks/useRegisterController";
-import {RegisterInterface} from "../interfaces/RegisterInterface";
+import {Box, Typography} from "@material-ui/core";
+import {SECOND_STEP} from "../hooks/useRegisterController";
+import {RegisterControllerInterface} from "../interfaces/RegisterControllerInterface";
+import {SecondStepNotice} from "../localComponents/SecondStepNotice";
+import {anyValueRule} from "../../../rules/globalRules";
 
 // @ts-ignore
 const useStyles = makeStyles(loginStyles);
-export const SecondStepContent = ({handleChangeStep}: RegisterInterface) => {
+export const SecondStepContent = ({
+                                      handleChangeStep,
+                                      controlSecondStep,
+                                      getEmail,
+                                      changeEmail
+                                  }: RegisterControllerInterface) => {
     const classes = useStyles();
-    const {handleSubmit, control} = useForm();
-
-    const handleCorrectEmail = () => {
-        handleChangeStep(FIRST_STEP);
-    };
 
     return (
-        <form className={classes.form}>
+        <form className={classes.form} onSubmit={(e) => handleChangeStep(SECOND_STEP, e)}>
             <Box style={{
                 marginTop: "-0.5rem",
             }}>
@@ -29,7 +30,7 @@ export const SecondStepContent = ({handleChangeStep}: RegisterInterface) => {
             </Box>
             <Typography variant="body2" align="center">
                 <Box fontWeight="500" component="b">
-                    fguadarramaherrera@gmail.com
+                    {getEmail()}
                 </Box>
             </Typography>
             <Box style={{
@@ -38,27 +39,11 @@ export const SecondStepContent = ({handleChangeStep}: RegisterInterface) => {
                 <MaterialInput
                     title="Código"
                     inputId="code"
-                    control={control}
+                    control={controlSecondStep}
                     icon={FaceIcon}
-                    rules={{
-                        required: {
-                            value: true,
-                            message: "Ingresa su nombre"
-                        },
-                    }}
+                    rules={{...anyValueRule("Ingresa el código")}}
                 />
-                <Box display="flex" justifyContent="center" className={classes.submitButton}>
-                    <Button type="button" color="primary" variant="contained">
-                        Completar
-                    </Button>
-                </Box>
-                <Typography variant="body2" align="center">
-                    ¿Correo incorrecto?
-                    <Button size="small" color="secondary"
-                            onClick={handleCorrectEmail}>
-                        Corregir
-                    </Button>
-                </Typography>
+                <SecondStepNotice changeEmail={changeEmail}/>
             </Box>
         </form>
     );
