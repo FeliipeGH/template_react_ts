@@ -1,4 +1,4 @@
-import {FormEvent, useState} from "react";
+import {FormEvent, useEffect, useState} from "react";
 import {useIsMounted} from "../../../hooks/useIsMounted";
 import {useForm} from "react-hook-form";
 import {RegisterControllerInterface} from "../interfaces/RegisterControllerInterface";
@@ -9,39 +9,43 @@ export const FIRST_STEP = 1;
 export const SECOND_STEP = 2;
 
 export const useRegisterController = (): RegisterControllerInterface => {
-    const [step, setStep] = useState(FIRST_STEP);
     const isMounted = useIsMounted();
-    const {
-        handleSubmit: handleSubmitFirstStep,
-        control: controlFirstStep,
-        formState: formStateFirstStep
-    } = useForm();
-
-    const {
-        handleSubmit: handleSubmitSecondStep,
-        control: controlSecondStep,
-        formState: formStateSecondStep
-    } = useForm();
-
+    const [step, setStep] = useState(FIRST_STEP);
+    const {handleSubmit: handleSubmitFirstStep, control: controlFirstStep, setValue} = useForm();
+    const {handleSubmit: handleSubmitSecondStep, control: controlSecondStep,} = useForm();
     const [firstStepData, setFirstStepData] = useState(new RegisterModelFirstStep());
     const [secondStepData, setSecondStepData] = useState(new RegisterModelSecondStep());
 
     const handleChangeStep = (option: number, event: FormEvent<HTMLFormElement>): void => {
         if (option === FIRST_STEP) {
             onFirstStepSubmit(event);
-            if (formStateFirstStep.isValid) {
-                console.log('aki')
-                if (isMounted.current) setStep(SECOND_STEP);
-                // todo request
-            }
         } else if (option === SECOND_STEP) {
             onSecondStepSubmit(event);
-            if (formStateSecondStep.isValid) {
-                console.log(firstStepData, secondStepData);
-                // todo request
-            }
         }
     };
+
+    const onValidFirstStep = () => {
+        const {isValid, name, userName, email, password} = firstStepData;
+        if (isValid) {
+            if (isMounted.current) setStep(SECOND_STEP);
+            setValue('name', name);
+            setValue('userName', userName);
+            setValue('email', email);
+            setValue('password', password);
+            // todo request
+        }
+    };
+
+    const onValidSecondStep = () => {
+        const {isValid} = secondStepData;
+        if (isValid) {
+
+        }
+    };
+
+    useEffect(onValidFirstStep, [firstStepData, isMounted, setValue]);
+
+    useEffect(onValidSecondStep, [secondStepData, firstStepData]);
 
     const onFirstStepSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();

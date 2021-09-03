@@ -1,4 +1,4 @@
-import React, {FormEvent} from "react";
+import {FormEvent} from "react";
 import {Control} from "react-hook-form/dist/types/form";
 
 export interface RegisterControllerInterface {

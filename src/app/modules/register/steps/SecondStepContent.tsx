@@ -2,7 +2,7 @@ import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import {loginStyles} from "../../login/styles/loginStyles";
 import {MaterialInput} from "../../../components/MaterialInput/MaterialInput";
-import FaceIcon from "@material-ui/icons/Face";
+import CodeIcon from '@material-ui/icons/Code';
 import {Box, Typography} from "@material-ui/core";
 import {SECOND_STEP} from "../hooks/useRegisterController";
 import {RegisterControllerInterface} from "../interfaces/RegisterControllerInterface";
@@ -40,7 +40,7 @@ export const SecondStepContent = ({
                     title="Código"
                     inputId="code"
                     control={controlSecondStep}
-                    icon={FaceIcon}
+                    icon={CodeIcon}
                     rules={{...anyValueRule("Ingresa el código")}}
                 />
                 <SecondStepNotice changeEmail={changeEmail}/>

@@ -67,12 +67,14 @@ export const MaterialInput = ({
             name={inputId}
             control={control}
             rules={{...rules}}
+            defaultValue=""
             render={({
                          field: {onChange, value},
                          fieldState: {error},
                      }) => (
                 <CustomInput
                     title={title}
+                    value={value}
                     type={type === 'password' ? hideText ? 'password' : 'text' : type}
                     inputId={inputId}
                     onClick={onClick}
