@@ -3,5 +3,4 @@ export class RegisterModelFirstStep {
     userName: string = "";
     email: string = "";
     password: string = "";
-    isValid: boolean = false;
 }

@@ -18,7 +18,7 @@ export const LoginPage = () => {
     const onSubmit = (data: LoginModel) => {
         console.log(data)
     };
-    
+
     return (
         <AuthContainer title="Iniciar sesión">
             <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>

@@ -5,7 +5,7 @@ import {loginStyles} from "../../login/styles/loginStyles";
 import FaceIcon from '@material-ui/icons/Face';
 import EmailIcon from '@material-ui/icons/Email';
 import {RegisterControllerInterface} from "../interfaces/RegisterControllerInterface";
-import {FIRST_STEP} from "../hooks/useRegisterController";
+import {FIRST_REGISTER_STEP} from "../hooks/useRegisterController";
 import {FirstStepNotice} from "../localComponents/FirstStepNotice";
 import {anyValueRule, emailRule, passwordRule} from "../../../rules/globalRules";
 
@@ -15,7 +15,7 @@ export const FirstStepContent = ({handleChangeStep, controlFirstStep}: RegisterC
     const classes = useStyles();
 
     return (
-        <form className={classes.form} onSubmit={(e) => handleChangeStep(FIRST_STEP, e)}>
+        <form className={classes.form} onSubmit={(e) => handleChangeStep(FIRST_REGISTER_STEP, e)}>
             <MaterialInput
                 title="Nombre completo"
                 inputId="name"

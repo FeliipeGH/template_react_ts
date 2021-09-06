@@ -3,11 +3,12 @@ import {makeStyles} from "@material-ui/core/styles";
 import {loginStyles} from "../../login/styles/loginStyles";
 import {MaterialInput} from "../../../components/MaterialInput/MaterialInput";
 import CodeIcon from '@material-ui/icons/Code';
-import {Box, Typography} from "@material-ui/core";
-import {SECOND_STEP} from "../hooks/useRegisterController";
+import {Box} from "@material-ui/core";
+import {SECOND_REGISTER_STEP} from "../hooks/useRegisterController";
 import {RegisterControllerInterface} from "../interfaces/RegisterControllerInterface";
 import {SecondStepNotice} from "../localComponents/SecondStepNotice";
 import {anyValueRule} from "../../../rules/globalRules";
+import {EmailCodeHeader} from "../../../components/AuthContainer/extras/EmailCodeHeader";
 
 // @ts-ignore
 const useStyles = makeStyles(loginStyles);
@@ -20,19 +21,8 @@ export const SecondStepContent = ({
     const classes = useStyles();
 
     return (
-        <form className={classes.form} onSubmit={(e) => handleChangeStep(SECOND_STEP, e)}>
-            <Box style={{
-                marginTop: "-0.5rem",
-            }}>
-                <Typography variant="body2" align="center">
-                    Ingresa el correo enviado a
-                </Typography>
-            </Box>
-            <Typography variant="body2" align="center">
-                <Box fontWeight="500" component="b">
-                    {getEmail()}
-                </Box>
-            </Typography>
+        <form className={classes.form} onSubmit={(e) => handleChangeStep(SECOND_REGISTER_STEP, e)}>
+            <EmailCodeHeader email={getEmail()}/>
             <Box style={{
                 marginTop: "2rem",
             }}>

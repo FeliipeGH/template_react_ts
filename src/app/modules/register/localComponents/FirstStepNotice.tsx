@@ -24,7 +24,7 @@ export const FirstStepNotice = () => {
             </Typography>
             <Typography variant="body2" align="center">
                 ¿Olvidaste tu cuenta?
-                <Button size="small" color="secondary">
+                <Button size="small" color="secondary" component={Link} to={RouteConstants.RECOVER_PASSWORD}>
                     Recuperala
                 </Button>
             </Typography>

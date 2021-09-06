@@ -34,6 +34,7 @@ export const AppBarLinks = () => {
                       className={
                           window.location.pathname === RouteConstants.LOGIN_PAGE
                           || window.location.pathname === RouteConstants.REGISTER_PAGE
+                          || window.location.pathname === RouteConstants.RECOVER_PASSWORD
                               ? navLinkSelect : navLinkNoSelect}
                 >
                     Acceder

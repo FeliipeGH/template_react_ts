@@ -1,4 +1,3 @@
-export class RegisterModelSecondStep {
-    code: string = "";
-    isValid: boolean = false;
+export interface RegisterModelSecondStep {
+    code: string;
 }
