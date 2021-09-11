@@ -9,6 +9,10 @@ img {
     font-family: "Roboto", "Roboto Light", "Roboto Thin", serif;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 ::-webkit-scrollbar {
     width: 0.565rem;
     height: 0.565rem;

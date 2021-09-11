@@ -1,5 +1,5 @@
 import {Theme} from "@material-ui/core";
-import {boxShadow, transition} from "../../../../assets/styles/globalStyles";
+import {boxShadow, defaultFont, grayColor, transition} from "../../../../assets/styles/globalStyles";
 
 export const appBarStyle = (theme: Theme) => ({
     offset: {
@@ -8,6 +8,7 @@ export const appBarStyle = (theme: Theme) => ({
     appBar: {
         background: "#ffffff",
         color: "inherit",
+        padding: "0.4rem"
     },
     toolBarContainer: {
         minHeight: "50px",
@@ -74,4 +75,16 @@ export const appBarStyle = (theme: Theme) => ({
         margin: "20px 10px",
         marginTop: "0px"
     },
+    branding: {
+        ...defaultFont,
+        color: grayColor[15],
+        fontWeight: "600",
+        fontSize: "1.125rem",
+        textAlign: "left"
+    },
+    subBrandinTitle: {
+        ...defaultFont,
+        fontSize: "0.75rem",
+        textAlign: "left"
+    }
 });

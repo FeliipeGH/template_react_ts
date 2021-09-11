@@ -5,6 +5,7 @@ import {MainPage} from "../modules/main/MainPage";
 import {LoginPage} from "../modules/login/LoginPage";
 import {RegisterPage} from "../modules/register/RegisterPage";
 import {RecoverPasswordPage} from "../modules/recoverPassword/RecoverPasswordPage";
+import {DashboardPage} from "../modules/dashboard/DashboardPage";
 
 export const AppRouter = () => {
     return (
@@ -13,6 +14,7 @@ export const AppRouter = () => {
             <Route exact path={RouteConstants.LOGIN_PAGE} component={LoginPage}/>
             <Route exact path={RouteConstants.REGISTER_PAGE} component={RegisterPage}/>
             <Route exact path={RouteConstants.RECOVER_PASSWORD} component={RecoverPasswordPage}/>
+            <Route exact path={RouteConstants.DASHBOARD_MAIN} component={DashboardPage}/>
         </BrowserRouter>
     );
 };

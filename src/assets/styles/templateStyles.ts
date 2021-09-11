@@ -111,7 +111,8 @@ const styles = {
     },
     left: {
         float: "left!important",
-        display: "block"
+        display: "block",
+        marginLeft: "-1rem"
     },
     right: {
         margin: "0",

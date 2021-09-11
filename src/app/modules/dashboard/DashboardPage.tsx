@@ -1,9 +1,8 @@
 import React from 'react';
+import {DashboardContent} from "../../components/dashboard/DashboardContent";
 
-const DashboardPage = () => {
+export const DashboardPage = () => {
     return (
-        <div>
-
-        </div>
+        <DashboardContent/>
     );
 };

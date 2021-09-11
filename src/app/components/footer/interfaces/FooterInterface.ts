@@ -4,4 +4,5 @@ export interface FooterInterface {
     children?: React.ReactNode,
     content?: any,
     big?: boolean,
+    showHr?: boolean,
 }

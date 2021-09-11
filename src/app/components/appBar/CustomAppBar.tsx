@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppBar, Box, Button, Container, Drawer, Hidden, IconButton, Toolbar, Typography} from "@material-ui/core";
+import {AppBar, Box, Button, Container, Drawer, Hidden, IconButton, Toolbar} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {appBarStyle} from "./styles/appBarStyle";
 import {CustomAppBarInterface} from "./interfaces/CustomAppBarInterface";
@@ -30,12 +30,12 @@ export const CustomAppBar = ({logo, description, branding, links, useOffSet = fa
                         <Button component={Link} to={RouteConstants.MAIN_PAGE}>
                             <img src={logo} alt="adpmx-logo" className={classes.imageContainer}/>
                             <Box className={classes.boxContent}>
-                                <Typography variant="h6" align="left">
+                                <Box className={classes.branding}>
                                     {branding}
-                                </Typography>
-                                <Typography variant="caption" align="left">
+                                </Box>
+                                <Box className={classes.subBrandinTitle}>
                                     {description}
-                                </Typography>
+                                </Box>
                             </Box>
                         </Button>
                         <Hidden smDown implementation="css">

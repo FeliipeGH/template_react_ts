@@ -1,5 +1,6 @@
 import {Theme} from "@material-ui/core";
 import {ColorList} from "../../../theme/ColorList";
+import {grayColor} from "../../../../assets/styles/globalStyles";
 
 export const appBarLinksStyle = (theme: Theme) => ({
     list: {
@@ -55,7 +56,7 @@ export const appBarLinksStyle = (theme: Theme) => ({
         padding: "0 !important"
     },
     navLink: {
-        color: "inherit",
+        color: grayColor[15],
         fontFamily: "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\"",
         position: "relative",
         padding: "0.9375rem",

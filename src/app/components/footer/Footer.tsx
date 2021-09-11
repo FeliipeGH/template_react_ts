@@ -9,7 +9,8 @@ const useStyles = makeStyles(styles);
 export const Footer = ({
                            big,
                            content,
-                           children
+                           children,
+                           showHr = false,
                        }: FooterInterface) => {
 
     const classes = useStyles();
@@ -26,7 +27,7 @@ export const Footer = ({
                 {children !== undefined ? (
                     <div>
                         <div className={classes.content}>{children}</div>
-                        <hr/>
+                        {showHr && <hr/>}
                     </div>
                 ) : (
                     " "

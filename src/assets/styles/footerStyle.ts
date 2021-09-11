@@ -41,6 +41,7 @@ const footerStyle = {
         textAlign: "center",
         display: "flex",
         zIndex: "2",
+        background: "#EEEEEE",
         position: "relative",
         "& ul": {
             marginBottom: "0",
@@ -167,6 +168,6 @@ const footerStyle = {
     },
     clearFix: {
         clear: "both"
-    }
+    },
 };
 export default footerStyle;
