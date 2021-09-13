@@ -8,14 +8,15 @@ import {Box, Card, Grid, Typography} from "@material-ui/core";
 import landingImage from "../../../assets/img/main/landing.jpg";
 import {AuthContainerInterface} from "./interfaces/AuthContainerInterface";
 import {AuthFooter} from "../AuthFooter/AuthFooter";
+import {routeComponentNames} from "../../router/constants/routeComponentNames";
 
 // @ts-ignore
 const useStyles = makeStyles(authContainerStyles);
-export const AuthContainer = ({children, title}: AuthContainerInterface) => {
+export const AuthContainer = ({children}: AuthContainerInterface) => {
     const classes = useStyles();
 
     return (
-        <div>
+        <Box>
             <CustomAppBar branding="MercadoMX" logo={logo} description="Por ADPMX S.A De C.V"
                           links={<AppBarLinks/>}
             />
@@ -29,7 +30,7 @@ export const AuthContainer = ({children, title}: AuthContainerInterface) => {
                         <Grid item xs={12} sm={12} md={4}>
                             <Card>
                                 <Typography variant="h5" align="center" className={classes.title}>
-                                    {title}
+                                    {routeComponentNames[window.location.pathname] ?? ""}
                                 </Typography>
                                 {children}
                             </Card>
@@ -38,6 +39,6 @@ export const AuthContainer = ({children, title}: AuthContainerInterface) => {
                 </Box>
             </Box>
             <AuthFooter/>
-        </div>
+        </Box>
     );
 };

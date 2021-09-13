@@ -7,5 +7,4 @@ export class RouteConstants {
 
     static DASHBOARD_ROOT: string = `/dashboard`;
     static DASHBOARD_MAIN: string = `${this.DASHBOARD_ROOT}/main`;
-
 }
