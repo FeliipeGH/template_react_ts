@@ -2,7 +2,7 @@ import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import {loginStyles} from "./styles/loginStyles";
 import {useForm} from "react-hook-form";
-import {MaterialInput} from "../../components/MaterialInput/MaterialInput";
+import {MaterialInput} from "../../components/materialInput/MaterialInput";
 import {LoginModel} from "../../../core/models/LoginModel";
 import {anyValueRule, passwordRule} from "../../rules/globalRules";
 import {LoginNotice} from "./localComponents/LoginNotice";

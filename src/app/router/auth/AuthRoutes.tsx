@@ -1,5 +1,5 @@
 import React from 'react';
-import {AuthContainer} from "../../components/AuthContainer/AuthContainer";
+import {AuthContainer} from "../../components/authContainer/AuthContainer";
 import {Redirect, Route, Switch} from "react-router";
 import {RouteConstants} from "../constants/RouteConstants";
 import {LoginPage} from "../../modules/login/LoginPage";

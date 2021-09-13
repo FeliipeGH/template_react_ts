@@ -7,7 +7,7 @@ import {authContainerStyles} from "./styles/authContainerStyles";
 import {Box, Card, Grid, Typography} from "@material-ui/core";
 import landingImage from "../../../assets/img/main/landing.jpg";
 import {AuthContainerInterface} from "./interfaces/AuthContainerInterface";
-import {AuthFooter} from "../AuthFooter/AuthFooter";
+import {AuthFooter} from "../authFooter/AuthFooter";
 import {routeComponentNames} from "../../router/constants/routeComponentNames";
 
 // @ts-ignore

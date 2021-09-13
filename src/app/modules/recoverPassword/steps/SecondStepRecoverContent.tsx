@@ -3,11 +3,11 @@ import {RecoverPasswordInterface} from "../interface/RecoverPasswordInterface";
 import {makeStyles} from "@material-ui/core/styles";
 import {loginStyles} from "../../login/styles/loginStyles";
 import {SECOND_RECOVER_STEP} from "../hooks/useRecoverPasswordController";
-import {EmailCodeHeader} from "../../../components/AuthContainer/extras/EmailCodeHeader";
+import {EmailCodeHeader} from "../../../components/authContainer/extras/EmailCodeHeader";
 import {Box} from "@material-ui/core";
 import CodeIcon from "@material-ui/icons/Code";
 import {anyValueRule} from "../../../rules/globalRules";
-import {MaterialInput} from "../../../components/MaterialInput/MaterialInput";
+import {MaterialInput} from "../../../components/materialInput/MaterialInput";
 import {SecondStepNotice} from "../../register/localComponents/SecondStepNotice";
 
 // @ts-ignore

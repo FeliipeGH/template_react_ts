@@ -122,7 +122,10 @@ const boxShadow = {
         ", 0.2)"
 };
 
-
+const hideElement = {
+    opacity: "0",
+    transform: "translate3d(-25px, 0, 0)",
+};
 const transition = {
     transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"
 };
@@ -298,6 +301,9 @@ const description = {
     color: grayColor[0]
 };
 
+const drawerWidth = 260;
+const drawerMiniWidth = 80;
+
 
 export {
     boxShadow,
@@ -343,5 +349,8 @@ export {
     mainRaised,
     mrAuto,
     mlAuto,
-    description
+    description,
+    hideElement,
+    drawerWidth,
+    drawerMiniWidth
 };

@@ -4,7 +4,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import {loginStyles} from "../../login/styles/loginStyles";
 import {FIRST_RECOVER_STEP} from "../hooks/useRecoverPasswordController";
 import {emailRule} from "../../../rules/globalRules";
-import {MaterialInput} from "../../../components/MaterialInput/MaterialInput";
+import {MaterialInput} from "../../../components/materialInput/MaterialInput";
 import EmailIcon from "@material-ui/icons/Email";
 import {Box, Typography} from "@material-ui/core";
 import {FirstRecoverStepNotice} from "../localComponents/FirstRecoverStepNotice";

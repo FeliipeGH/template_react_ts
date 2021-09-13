@@ -1,5 +1,5 @@
 import React from 'react';
-import {MaterialInput} from "../../../components/MaterialInput/MaterialInput";
+import {MaterialInput} from "../../../components/materialInput/MaterialInput";
 import {makeStyles} from "@material-ui/core/styles";
 import {loginStyles} from "../../login/styles/loginStyles";
 import FaceIcon from '@material-ui/icons/Face';
