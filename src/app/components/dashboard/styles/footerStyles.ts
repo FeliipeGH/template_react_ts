@@ -3,10 +3,18 @@ import {defaultFont} from "../../../../assets/styles/globalStyles";
 import {ColorList} from "../../../theme/ColorList";
 
 export const dashboardFooterStyles = (theme: Theme) => ({
+    content: {
+        padding: "0.5rem 0 0.8rem",
+        width: "100%",
+        height: "auto",
+        margin: "0 auto",
+        background: "#eee",
+        overflow: "hidden",
+    },
     left: {
         float: "left!important",
         display: "block",
-        marginLeft: "-1rem"
+        marginLeft: "-1rem",
     },
     right: {
         margin: "0",

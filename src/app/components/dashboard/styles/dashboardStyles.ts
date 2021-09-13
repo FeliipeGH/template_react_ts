@@ -48,6 +48,6 @@ export const dashboardStyles = (theme: Theme) => ({
     },
     container: {
         margin: "3.5rem 0.05rem 0",
-        minHeight: "calc(100vh - 10rem)",
+        minHeight: "calc(100vh - 10.5rem)",
     }
 });

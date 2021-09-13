@@ -6,8 +6,8 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import PinterestIcon from "@material-ui/icons/Pinterest";
 import PlaceIcon from "@material-ui/icons/Place";
-import {Footer} from "../../footer/Footer";
 import {authFooterStyles} from "../styles/authFooterStyles";
+import {DashboardFooter} from "../../dashboard/localComponents/DashboardFooter";
 
 // @ts-ignore
 const useStyles = makeStyles(authFooterStyles);
@@ -15,7 +15,7 @@ export const AuthFooterContent = () => {
     const classes = useStyles();
 
     return (
-        <Footer>
+        <Box marginTop="2.5rem">
             <Box marginBottom="2rem">
                 <Grid container spacing={8}>
                     <Grid item xs={12} sm={4} md={4}>
@@ -88,6 +88,7 @@ export const AuthFooterContent = () => {
                     </Grid>
                 </Grid>
             </Box>
-        </Footer>
+            <DashboardFooter/>
+        </Box>
     );
 };

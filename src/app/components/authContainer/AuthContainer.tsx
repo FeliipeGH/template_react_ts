@@ -16,7 +16,9 @@ export const AuthContainer = ({children}: AuthContainerInterface) => {
     const classes = useStyles();
 
     return (
-        <Box>
+        <Box style={{
+            background: "#eee"
+        }}>
             <CustomAppBar branding="MercadoMX" logo={logo} description="Por ADPMX S.A De C.V"
                           links={<AppBarLinks/>}
             />

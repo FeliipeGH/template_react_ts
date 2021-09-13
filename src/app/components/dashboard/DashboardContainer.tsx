@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box} from "@material-ui/core";
+import {Box, Divider} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {dashboardStyles} from "./styles/dashboardStyles";
 import {DashboardContainerInterface} from "./interfaces/DashboardContainerInterface";
@@ -44,7 +44,10 @@ export const DashboardContainer = ({moduleList = [], children}: DashboardContain
                 <Box className={classes.container}>
                     {children}
                 </Box>
-                <DashboardFooter/>
+                <Divider/>
+                <Box marginBottom="-1.8rem">
+                    <DashboardFooter/>
+                </Box>
             </Box>
         </Box>
     );
