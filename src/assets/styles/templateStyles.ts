@@ -1,6 +1,6 @@
 import {
     blackColor,
-    container,
+    container, defaultFont,
     description,
     grayColor,
     hexToRgb,
@@ -12,6 +12,7 @@ import {
     whiteColor
 } from "./globalStyles";
 import imagesStyles from "./imageStyles";
+import {ColorList} from "../../app/theme/ColorList";
 
 const styles = {
     ...imagesStyles,
@@ -91,6 +92,33 @@ const styles = {
             fontSize: "20px",
             display: "table-cell",
             paddingRight: "10px"
+        }
+    },
+    socialMediaBottom: {
+        ...defaultFont,
+        fontWeight: "500",
+        fontSize: "0.75rem",
+        margin: "1.25rem",
+        textTransform: "uppercase",
+        color: "#000",
+        display: "inline-flex",
+        alignItems: "center",
+        "&:hover": {
+            color: ColorList.secondaryMain,
+        }
+    },
+    copyRight: {
+        ...defaultFont,
+        fontSize: "0.875rem",
+        margin: "1rem 0 1rem"
+    },
+    copyRightBy: {
+        ...defaultFont,
+        fontSize: "0.875rem",
+        fontWeight: "600",
+        color: "#111",
+        "&:hover": {
+            color: ColorList.secondaryMain,
         }
     },
     img: {

@@ -305,6 +305,8 @@ const drawerWidth = 260;
 const drawerMiniWidth = 80;
 
 
+
+
 export {
     boxShadow,
     hexToRgb,
@@ -352,5 +354,5 @@ export {
     description,
     hideElement,
     drawerWidth,
-    drawerMiniWidth
+    drawerMiniWidth,
 };

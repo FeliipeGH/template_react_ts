@@ -7,6 +7,7 @@ import {useIsMounted} from "../../hooks/useIsMounted";
 import {DashboardAppbar} from "../dashboardAppbar/DashboardAppbar";
 import {routeComponentNames} from "../../router/constants/routeComponentNames";
 import {DashboardSidebar} from "../dashboardSidebar/DashboardSidebar";
+import {DashboardFooter} from "./localComponents/DashboardFooter";
 
 // @ts-ignore
 const useStyles = makeStyles(dashboardStyles);
@@ -43,6 +44,7 @@ export const DashboardContainer = ({moduleList = [], children}: DashboardContain
                 <Box className={classes.container}>
                     {children}
                 </Box>
+                <DashboardFooter/>
             </Box>
         </Box>
     );

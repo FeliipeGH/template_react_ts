@@ -5,7 +5,7 @@ export const dashboardStyles = (theme: Theme) => ({
     wrapper: {
         position: "relative",
         top: "0",
-        height: "100vh",
+        minHeight: "100vh",
         backgroundColor: "#EEEEEE",
         "&:after": {
             display: "table",
@@ -36,7 +36,7 @@ export const dashboardStyles = (theme: Theme) => ({
     mainContainer: {
         transition: "all 150ms ease 0s",
         padding: "30px 15px",
-        minHeight: "calc(100vh - 60px)",
+        minHeight: "calc(100vh - 4rem)",
         [theme.breakpoints.up("md")]: {
             marginLeft: `${drawerWidth}px`,
         }
@@ -48,5 +48,6 @@ export const dashboardStyles = (theme: Theme) => ({
     },
     container: {
         margin: "3.5rem 0.05rem 0",
+        minHeight: "calc(100vh - 10rem)",
     }
 });

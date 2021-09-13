@@ -1,5 +1,5 @@
 import {Theme} from "@material-ui/core";
-import {drawerMiniWidth, drawerWidth, transition} from "../../../../assets/styles/globalStyles";
+import {defaultFont, drawerMiniWidth, drawerWidth, transition} from "../../../../assets/styles/globalStyles";
 
 export const dashboardAppbarStyles = (theme: Theme) => ({
     root: {
@@ -15,6 +15,7 @@ export const dashboardAppbarStyles = (theme: Theme) => ({
     },
     title: {
         flexGrow: 1,
+        ...defaultFont,
     },
     appBar: {
         background: "#fff",
