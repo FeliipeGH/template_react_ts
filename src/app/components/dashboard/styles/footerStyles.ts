@@ -4,7 +4,7 @@ import {ColorList} from "../../../theme/ColorList";
 
 export const dashboardFooterStyles = (theme: Theme) => ({
     content: {
-        padding: "0.5rem 0 0.8rem",
+        /*padding: "0.5rem 0 0.8rem",*/
         width: "100%",
         height: "auto",
         margin: "0 auto",

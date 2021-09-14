@@ -35,8 +35,8 @@ export const dashboardStyles = (theme: Theme) => ({
     },
     mainContainer: {
         transition: "all 150ms ease 0s",
-        padding: "30px 15px",
-        minHeight: "calc(100vh - 4rem)",
+        padding: "30px 15px 0",
+
         [theme.breakpoints.up("md")]: {
             marginLeft: `${drawerWidth}px`,
         }
@@ -48,6 +48,6 @@ export const dashboardStyles = (theme: Theme) => ({
     },
     container: {
         margin: "3.5rem 0.05rem 0",
-        minHeight: "calc(100vh - 10.5rem)",
+        minHeight: "calc(100vh - 9.2rem)",
     }
 });
