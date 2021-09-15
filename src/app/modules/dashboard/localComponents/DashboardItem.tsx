@@ -34,7 +34,7 @@ export const DashboardItem = ({
                         </Typography>
                         <Box className={classes.footer}>
                             <Divider/>
-                            <Box display="flex" alignItems="center" marginTop="0.35rem" marginBottom="0.25rem">
+                            <Box display="flex" alignItems="center" marginTop="0.4rem" marginBottom="0.25rem">
                                 <Icon fontSize="small" className={classes.footerIcon}/>
                                 &nbsp;
                                 <Typography className={classes.footTitle}>

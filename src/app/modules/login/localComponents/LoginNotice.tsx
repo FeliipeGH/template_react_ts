@@ -12,7 +12,7 @@ export const LoginNotice = () => {
     return (
         <>
             <Box display="flex" justifyContent="center" className={classes.submitButton}>
-                <Button type="submit" color="primary" variant="contained">
+                <Button type="submit" color="primary" variant="contained" className={classes.button}>
                     Ingresar
                 </Button>
             </Box>

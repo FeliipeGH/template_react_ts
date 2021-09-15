@@ -11,18 +11,18 @@ export const dashboardModulesList = [
         url: RouteConstants.DASHBOARD_MAIN,
     },
     {
-        title: "CRUD",
+        title: "Negocios",
         icon: AssignmentIcon,
         collapseList: [
             {
                 title: "Consulta",
                 icon: ListIcon,
-                url: "/algo",
+                url: RouteConstants.BUSINESS_LIST,
             },
             {
                 title: "Agregar-Editar",
                 icon: CategoryIcon,
-                url: "/algo",
+                url: RouteConstants.BUSINESS_CREATE,
             },
         ]
     },

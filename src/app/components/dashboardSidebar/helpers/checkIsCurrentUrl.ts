@@ -5,4 +5,4 @@ export const checkIsCurrentUrl = (collapseList: Array<any>) => {
         }
     }
     return false;
-}
+};

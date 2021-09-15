@@ -11,7 +11,7 @@ export const SecondStepNotice = ({changeEmail}: SecondStepNoticeInterface) => {
     return (
         <>
             <Box display="flex" justifyContent="center" className={classes.submitButton}>
-                <Button type="submit" color="primary" variant="contained">
+                <Button type="submit" color="primary" variant="contained" className={classes.button}>
                     Completar
                 </Button>
             </Box>

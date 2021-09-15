@@ -13,6 +13,9 @@ export const dashboardStyles = (theme: Theme) => ({
             content: '" "',
         },
     },
+    content: {
+        padding: "2.5rem 0.8rem 0",
+    },
     main: {
         [theme.breakpoints.up("md")]: {
             width: `calc(100% - ${drawerWidth}px)`,

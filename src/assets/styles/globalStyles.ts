@@ -157,6 +157,11 @@ const defaultFont = {
     fontWeight: "300",
     lineHeight: "1.5em"
 };
+const circularProgressContent = {
+    height: "65vh",
+    display: "grid",
+    placeContent: "center"
+}
 
 const dangerBoxShadow = {
     boxShadow:
@@ -304,10 +309,24 @@ const description = {
 const drawerWidth = 260;
 const drawerMiniWidth = 80;
 
-
-
+const button = {
+    ...defaultFont,
+    fontSize: "0.75rem",
+    fontWeight: "400",
+    padding: "0.75rem 1.875rem"
+};
+const primaryColor = [
+    ColorList.primaryMain,
+    ColorList.primaryMain,
+    ColorList.primaryMain,
+    ColorList.primaryMain,
+    ColorList.primaryMain,
+    ColorList.primaryMain,
+];
 
 export {
+    button,
+    primaryColor,
     boxShadow,
     hexToRgb,
     transition,
@@ -355,4 +374,5 @@ export {
     hideElement,
     drawerWidth,
     drawerMiniWidth,
+    circularProgressContent
 };

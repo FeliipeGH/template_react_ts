@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {sideElementStyles} from "../styles/sideElementStyles";
 import {makeStyles} from "@material-ui/core/styles";
 import {Link, useLocation} from "react-router-dom";
@@ -37,9 +37,21 @@ export const ModuleSideListItem = ({
         color: "#fff",
         boxShadow: '0 4px 6px -6px black',
     } : {
-        color: "#111",
+        color: "#616B77",
     };
 
+    const onInit = () => {
+        if (checkIsCurrentUrl(collapseList)) {
+            if (isMounted.current) {
+                setOpenCollapse(true);
+            }
+        } else if (isMounted.current) {
+            setOpenCollapse(false);
+        }
+    };
+
+    // eslint-disable-next-line
+    useEffect(onInit, [isMounted, location.pathname]);
 
     const getListItemContent = (): JSX.Element => {
         return (
@@ -117,7 +129,7 @@ const CollapseListItem = ({
         backgroundColor: ColorList.primaryMain,
         color: "#fff",
     } : {
-        color: "#111",
+        color: "#616B77",
     };
 
     const getListItemContent = (): JSX.Element => {

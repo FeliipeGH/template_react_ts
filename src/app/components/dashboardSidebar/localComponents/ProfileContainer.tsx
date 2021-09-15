@@ -8,6 +8,7 @@ import {CollapseElement} from "../interfaces/CollapseElement";
 import {List} from "@material-ui/core";
 import {ModuleSideListItem} from "./ModuleSideListItem";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import {RouteConstants} from "../../../router/constants/RouteConstants";
 // @ts-ignore
 const useStyles = makeStyles(sideElementStyles);
 export const ProfileContainer = ({isOpenMini, isOpenTemporalMenu}: ProfileContainerInterface) => {
@@ -21,7 +22,7 @@ export const ProfileContainer = ({isOpenMini, isOpenTemporalMenu}: ProfileContai
         {
             title: "Mi perfil",
             icon: ContactMailIcon,
-            onClick: onLogOut,
+            url: RouteConstants.PROFILE
         },
         {
             title: "Cerrar sesión",

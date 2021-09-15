@@ -42,7 +42,9 @@ export const DashboardContainer = ({moduleList = [], children}: DashboardContain
             />
             <Box className={mainContainerClass}>
                 <Box className={classes.container}>
-                    {children}
+                    <Box className={classes.content}>
+                        {children}
+                    </Box>
                 </Box>
                 <Box>
                     <Divider/>

@@ -55,6 +55,7 @@ export const dashboardItemStyle = (theme: Theme) => ({
     },
     hintTitle: {
         ...defaultFont,
+        fontSize: "0.875rem",
         color: "#999999"
     },
     title: {
@@ -74,6 +75,8 @@ export const dashboardItemStyle = (theme: Theme) => ({
         color: "#999999"
     },
     footTitle: {
+        ...defaultFont,
+        fontSize: "0.75rem",
         color: "#999999",
         display: "inline-block"
     },

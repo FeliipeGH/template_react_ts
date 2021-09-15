@@ -1,4 +1,5 @@
 import {Theme} from "@material-ui/core";
+import {button} from "../../../../assets/styles/globalStyles";
 
 export const loginStyles = (theme: Theme) => ({
     form: {
@@ -8,4 +9,5 @@ export const loginStyles = (theme: Theme) => ({
     submitButton: {
         margin: "1.5rem 0"
     },
+    button,
 })
