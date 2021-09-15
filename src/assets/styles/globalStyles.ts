@@ -324,10 +324,27 @@ const primaryColor = [
     ColorList.primaryMain,
 ];
 
+const dialogTitle = {
+    color: grayColor[1],
+    textDecoration: "none",
+    fontWeight: "300",
+    marginTop: "30px",
+    marginBottom: "25px",
+    minHeight: "32px",
+    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+    "& small": {
+        color: grayColor[0],
+        fontSize: "65%",
+        fontWeight: "400",
+        lineHeight: "1",
+    },
+};
+
 export {
     button,
     primaryColor,
     boxShadow,
+    dialogTitle,
     hexToRgb,
     transition,
     containerFluid,
