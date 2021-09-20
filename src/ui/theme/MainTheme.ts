@@ -3,7 +3,6 @@ import {ColorList} from "./ColorList";
 
 export const mainTheme = createTheme({
     palette: {
-
         primary: {
             main: ColorList.primaryMain,
             light: ColorList.primaryLight,

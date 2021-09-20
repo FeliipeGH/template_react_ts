@@ -28,7 +28,8 @@ export const authContainerStyles = (theme: Theme) => ({
     },
     title: {
         margin: "2rem 0 0",
-    }, container: {
+    },
+    container: {
         ...container,
         zIndex: "4",
         [theme.breakpoints.down("sm")]: {
