@@ -9,6 +9,7 @@ import landingImage from "../../../assets/img/main/landing.jpg";
 import {AuthContainerInterface} from "./interfaces/AuthContainerInterface";
 import {AuthFooter} from "../authFooter/AuthFooter";
 import {routeComponentNames} from "../../router/constants/routeComponentNames";
+import {GeneralConstants} from "../../constants/GeneralConstants";
 
 // @ts-ignore
 const useStyles = makeStyles(authContainerStyles);
@@ -19,7 +20,8 @@ export const AuthContainer = ({children}: AuthContainerInterface) => {
         <Box style={{
             background: "#eee"
         }}>
-            <CustomAppBar branding="MercadoMX" logo={logo} description="Por ADPMX S.A De C.V"
+            <CustomAppBar branding={GeneralConstants.BUSINESS_NAME} logo={logo}
+                          description={GeneralConstants.BUSINESS_DESC}
                           links={<AppBarLinks/>}
             />
             <Box className={classes.pageHeader} style={{

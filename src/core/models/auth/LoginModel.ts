@@ -4,7 +4,7 @@ export interface LoginModel {
 }
 
 export interface Role {
-    roleName: string,
+    authority: string,
 }
 
 export interface LoginResponse {
@@ -12,4 +12,5 @@ export interface LoginResponse {
     authorities?: Array<Role> | null,
     email?: string | null,
     userName: string | null,
+    name: string | null,
 }

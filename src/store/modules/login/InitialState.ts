@@ -6,4 +6,5 @@ export const loginInitialState: LoginState = {
     expiration: null,
     token: null,
     userName: null,
+    name: null,
 };

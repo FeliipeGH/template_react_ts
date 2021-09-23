@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {BrowserRouter} from "react-router-dom";
 import {RouteConstants} from "./constants/RouteConstants";
 import {Redirect, Switch} from "react-router";
-import {AuthRoutesContainer} from "./auth/AuthRoutesContainer";
-import {DashboardRoutesContainer} from "./dashboard/DashboardRoutesContainer";
 import {DashboardRoutes} from "./dashboard/DashboardRoutes";
 import {AuthRoutes} from "./auth/AuthRoutes";
 import {Box, CircularProgress} from "@material-ui/core";
@@ -16,6 +14,8 @@ import {getUserDataFromLocalStorage} from "../modules/login/services/loginServic
 import {doLogin, logOut} from "../../store/modules/login/loginActions";
 import {LoginState} from "../../store/modules/login/LoginTypes";
 import {useIsMounted} from "../hooks/useIsMounted";
+import {AuthRoutesContainer} from "./auth/AuthRoutesContainer";
+import {DashboardRoutesContainer} from "./dashboard/DashboardRoutesContainer";
 
 // @ts-ignore
 const useStyles = makeStyles(appRouterStyles);
@@ -23,7 +23,7 @@ export const AppRouter = () => {
     const classes = useStyles();
     const isMounted = useIsMounted();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [checking, setChecking] = useState(false);
+    const [checking, setChecking] = useState(true);
     const userData = useSelector((state: RootState) => state.loginReducer);
     const dispatch = useDispatch();
 

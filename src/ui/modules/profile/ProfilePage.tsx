@@ -13,6 +13,7 @@ const useStyles = makeStyles(profileStyles);
 
 export const ProfilePage = () => {
     const classes = useStyles();
+    console.log('profi')
 
     return (
         <Box>

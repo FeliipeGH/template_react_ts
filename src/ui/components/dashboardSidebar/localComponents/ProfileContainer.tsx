@@ -9,20 +9,22 @@ import {List} from "@material-ui/core";
 import {ModuleSideListItem} from "./ModuleSideListItem";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import {RouteConstants} from "../../../router/constants/RouteConstants";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {removeUserDataFromLocalStorage} from "../../../modules/login/services/loginService";
 import {logOut} from "../../../../store/modules/login/loginActions";
+import {RootState} from "../../../../store/mainStore";
 // @ts-ignore
 const useStyles = makeStyles(sideElementStyles);
 export const ProfileContainer = ({isOpenMini, isOpenTemporalMenu}: ProfileContainerInterface) => {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const {userName} = useSelector((state: RootState) => state.loginReducer);
 
     const onLogOut = async () => {
         await removeUserDataFromLocalStorage();
         dispatch(logOut());
     };
-    
+
     const collapseList: Array<CollapseElement> = [
         {
             title: "Mi perfil",
@@ -38,7 +40,7 @@ export const ProfileContainer = ({isOpenMini, isOpenTemporalMenu}: ProfileContai
 
     return (
         <List component="nav" aria-labelledby="nested-list-subheader" className={classes.root}>
-            <ModuleSideListItem title="Felipe" isOpenMini={isOpenMini} icon={AccountCircleIcon}
+            <ModuleSideListItem title={userName ?? ""} isOpenMini={isOpenMini} icon={AccountCircleIcon}
                                 isOpenTemporalMenu={isOpenTemporalMenu} collapseList={collapseList}/>
         </List>
     );

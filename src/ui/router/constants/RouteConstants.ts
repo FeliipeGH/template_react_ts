@@ -5,7 +5,7 @@ export class RouteConstants {
     static REGISTER_PAGE: string = `${this.AUTH_PAGE}/register`;
     static RECOVER_PASSWORD: string = `${this.AUTH_PAGE}/recover-password`;
 
-    static DASHBOARD_ROOT: string = `/dashboard`;
+    static DASHBOARD_ROOT: string = "/dashboard";
     static DASHBOARD_MAIN: string = `${this.DASHBOARD_ROOT}/main`;
     static BUSINESS_LIST: string = `${this.DASHBOARD_ROOT}/business-list`;
     static BUSINESS_CREATE: string = `${this.DASHBOARD_ROOT}/business-create-update`;

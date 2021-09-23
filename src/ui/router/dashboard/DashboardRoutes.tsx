@@ -9,6 +9,7 @@ import {BusinessCreateUpdatePage} from "../../modules/business/BusinessCrateUpda
 import {ProfilePage} from "../../modules/profile/ProfilePage";
 
 export const DashboardRoutes = () => {
+    console.log('dashbo')
     return (
         <DashboardContainer moduleList={dashboardModulesList}>
             <Switch>

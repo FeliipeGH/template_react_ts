@@ -1,3 +1,3 @@
 export class GeneralConstants {
-    static BASE_URL = "http://192.168.0.4:8088";
+    static BASE_URL = "http://192.168.0.11:8088";
 }
