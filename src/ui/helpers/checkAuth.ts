@@ -1,5 +1,28 @@
-import {getUserDataFromLocalStorage} from "../modules/login/services/loginService";
 import {LoginState} from "../../store/modules/login/LoginTypes";
+import SecureLS from "secure-ls";
+
+export const TIME_EXPIRATION_MS = 23 * 60 * 60 * 1000;
+export const LOGIN_DATA = 'LoginData';
+
+export const getUserDataFromLocalStorage = (): string => {
+    const secureStorage = new SecureLS({encodingType: 'aes'});
+    return secureStorage.get(LOGIN_DATA);
+};
+
+export const getTimeExpiration = (): number => {
+    const date = new Date();
+    return date.getTime() + TIME_EXPIRATION_MS;
+};
+
+export const saveUserDataInLocalStorage = (userData: LoginState) => {
+    const secureStorage = new SecureLS({encodingType: 'aes'});
+    secureStorage.set(LOGIN_DATA, JSON.stringify(userData));
+};
+
+export const removeUserDataFromLocalStorage = async () => {
+    const secureStorage = new SecureLS({encodingType: 'aes'});
+    await secureStorage.removeAll();
+};
 
 export const checkAuth = (): boolean => {
     let isAuth = true;

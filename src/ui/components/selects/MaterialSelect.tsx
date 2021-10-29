@@ -15,7 +15,9 @@ export const MaterialSelect = ({
                                    subKey,
                                    title,
                                    value,
-                                   multiple = false
+                                   multiple = false,
+                                   hasError = false,
+                                   enable = true,
                                }: MaterialSelectInterface) => {
     const classes = useStyles();
 
@@ -26,7 +28,7 @@ export const MaterialSelect = ({
         >
             <InputLabel
                 htmlFor={id}
-                className={classes.selectLabel}
+                className={(hasError ? classes.selectLabelWithError : classes.selectLabel)}
             >
                 {title}
             </InputLabel>
@@ -35,6 +37,7 @@ export const MaterialSelect = ({
                 MenuProps={{
                     className: classes.selectMenu,
                 }}
+                disabled={!enable}
                 classes={{
                     select: classes.select,
                 }}

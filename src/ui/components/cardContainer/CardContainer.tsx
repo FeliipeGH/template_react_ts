@@ -3,6 +3,7 @@ import {Box, Button, Card} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {cardContainerStyles} from "./styles/CardContainerStyles";
 import {CardContainerInterface} from "./interfaces/CardContainerInterface";
+import {Link} from "react-router-dom";
 
 // @ts-ignore
 const useStyles = makeStyles(cardContainerStyles);
@@ -12,8 +13,7 @@ export const CardContainer = ({
                                   showButton = true,
                                   children,
                                   color = "primary",
-                                  onClick = () => {
-                                  }
+                                  onClick
                               }: CardContainerInterface) => {
     const classes = useStyles();
 
@@ -29,7 +29,9 @@ export const CardContainer = ({
                     </Box>
                     {
                         showButton && (
-                            <Button color="primary" variant="contained" className={classes.button} onClick={onClick}>
+                            <Button color="primary" variant="contained" className={classes.button}
+                                    component={Link} to={onClick ?? ""}
+                            >
                                 Agregar
                             </Button>
                         )

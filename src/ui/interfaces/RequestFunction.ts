@@ -1,6 +1,6 @@
-export interface ResultData {
-    list: Array<any>,
+export interface ResultListData {
+    list?: Array<any>,
     resolved: boolean,
 }
 
-export type RequestTokenFunction = (token: string | null) => Promise<ResultData>;
+export type RequestListTokenFunction = (token?: string | null, id?: number) => Promise<ResultListData>;

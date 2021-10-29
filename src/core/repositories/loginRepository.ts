@@ -1,26 +1,25 @@
 import {LoginModel, LoginResponse} from "../models/auth/LoginModel";
-import axios, {AxiosError} from "axios";
 import {HttpErrors} from "../constants/HttpErrors";
 import {GeneralConstants} from "../constants/GeneralConstants";
+import {LoginRepository} from "../interfaces/LoginRepository";
 
-export const requestLogin = async (login: LoginModel): Promise<LoginResponse> => {
-    try {
-        const response = await axios({
-            url: `${GeneralConstants.BASE_URL}/auth/signIn`,
+export class LoginRepositoryImpl implements LoginRepository {
+
+    async requestLogin(login: LoginModel): Promise<LoginResponse> {
+        const response: Response = await fetch(`${GeneralConstants.BASE_URL}/auth/signIn`, {
             method: 'POST',
-            data: login
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(login)
         });
-        return response.data as LoginResponse;
-    } catch (e) {
-        const {response} = e as AxiosError;
-        if (response) {
+        if (response.status !== 200) {
             if (response.status === 401) {
                 throw new Error(HttpErrors.INCORRECT_CREDENTIALS);
             } else {
                 throw new Error(HttpErrors.SERVER_ERROR);
             }
-        } else {
-            throw new Error(HttpErrors.SERVER_ERROR);
         }
+        return await response.json() as LoginResponse;
     }
-};
+}

@@ -1,5 +1,5 @@
 import {
-    blackColor,
+    blackColor, dangerColor,
     grayColor,
     hexToRgb,
     primaryBoxShadow,
@@ -38,6 +38,12 @@ const customSelectStyle = {
                 borderBottomColor: primaryColor[0] + "!important",
             },
         },
+    },
+    selectLabelWithError: {
+        fontSize: "12px",
+        textTransform: "uppercase",
+        color: dangerColor[1] + " !important",
+        top: "8px",
     },
     selectLabel: {
         fontSize: "12px",

@@ -1,7 +1,6 @@
-import {Theme} from "@material-ui/core";
 import {button} from "../../../../assets/styles/tss/globalStyles";
 
-export const loginStyles = (theme: Theme) => ({
+export const loginStyles = (theme) => ({
     form: {
         margin: "0",
         padding: "2rem"

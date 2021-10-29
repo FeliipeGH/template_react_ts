@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {BrowserRouter} from "react-router-dom";
 import {RouteConstants} from "./constants/RouteConstants";
 import {Redirect, Switch} from "react-router";
 import {DashboardRoutes} from "./dashboard/DashboardRoutes";
@@ -9,13 +8,13 @@ import {makeStyles} from "@material-ui/core/styles";
 import {appRouterStyles} from "./styles/appRouterStyles";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../store/mainStore";
-import {checkAuth} from "../helpers/checkAuth";
-import {getUserDataFromLocalStorage} from "../modules/login/services/loginService";
+import {checkAuth, getUserDataFromLocalStorage} from "../helpers/checkAuth";
 import {doLogin, logOut} from "../../store/modules/login/loginActions";
 import {LoginState} from "../../store/modules/login/LoginTypes";
 import {useIsMounted} from "../hooks/useIsMounted";
 import {AuthRoutesContainer} from "./auth/AuthRoutesContainer";
 import {DashboardRoutesContainer} from "./dashboard/DashboardRoutesContainer";
+import {useLocation} from "react-router-dom";
 
 // @ts-ignore
 const useStyles = makeStyles(appRouterStyles);
@@ -26,6 +25,7 @@ export const AppRouter = () => {
     const [checking, setChecking] = useState(true);
     const userData = useSelector((state: RootState) => state.loginReducer);
     const dispatch = useDispatch();
+    const location = useLocation();
 
     useEffect(() => {
         if (isMounted.current) setChecking(true);
@@ -44,7 +44,7 @@ export const AppRouter = () => {
             setChecking(false);
             setIsAuthenticated(isAuth);
         }
-    }, [userData, dispatch, isMounted]);
+    }, [userData, dispatch, isMounted, location.pathname]);
 
     if (checking) {
         return (
@@ -55,14 +55,12 @@ export const AppRouter = () => {
     }
 
     return (
-        <BrowserRouter>
-            <Switch>
-                <AuthRoutesContainer path={RouteConstants.AUTH_PAGE} component={AuthRoutes}
-                                     isAuthenticated={isAuthenticated}/>
-                <DashboardRoutesContainer path={RouteConstants.DASHBOARD_ROOT} component={DashboardRoutes}
-                                          isAuthenticated={isAuthenticated}/>
-                <Redirect to={RouteConstants.AUTH_PAGE}/>
-            </Switch>
-        </BrowserRouter>
+        <Switch>
+            <AuthRoutesContainer path={RouteConstants.AUTH_PAGE} component={AuthRoutes}
+                                 isAuthenticated={isAuthenticated}/>
+            <DashboardRoutesContainer path={RouteConstants.DASHBOARD_ROOT} component={DashboardRoutes}
+                                      isAuthenticated={isAuthenticated}/>
+            <Redirect to={RouteConstants.AUTH_PAGE}/>
+        </Switch>
     );
 };

@@ -10,9 +10,10 @@ import {ModuleSideListItem} from "./ModuleSideListItem";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import {RouteConstants} from "../../../router/constants/RouteConstants";
 import {useDispatch, useSelector} from "react-redux";
-import {removeUserDataFromLocalStorage} from "../../../modules/login/services/loginService";
+
 import {logOut} from "../../../../store/modules/login/loginActions";
 import {RootState} from "../../../../store/mainStore";
+import {removeUserDataFromLocalStorage} from "../../../helpers/checkAuth";
 // @ts-ignore
 const useStyles = makeStyles(sideElementStyles);
 export const ProfileContainer = ({isOpenMini, isOpenTemporalMenu}: ProfileContainerInterface) => {

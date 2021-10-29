@@ -11,6 +11,7 @@ export const MaterialSwal = withReactContent(Swal);
 export const CORRECT_TITLE = "Correcto";
 export const ERROR_TITLE = "Error";
 export const WARNING_TITLE = "Alerta";
+export const GENERAL_QUESTION_TEXT = "¡El elemento no se podrá recuperar!";
 export const CONTINUE_QUESTION_TITLE = "¿Continuar?";
 
 //General texts

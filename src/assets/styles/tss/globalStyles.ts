@@ -339,6 +339,10 @@ const dialogTitle = {
         lineHeight: "1",
     },
 };
+const submitButton = {
+    ...button,
+    margin: "1.5rem 0 0.5rem"
+};
 
 export {
     button,
@@ -391,5 +395,6 @@ export {
     hideElement,
     drawerWidth,
     drawerMiniWidth,
-    circularProgressContent
+    circularProgressContent,
+    submitButton
 };

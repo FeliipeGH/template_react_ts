@@ -1,4 +1,4 @@
-import React, {ChangeEvent, ReactNode} from "react";
+import {ChangeEvent, ReactNode} from "react";
 
 export interface MaterialSelectInterface {
     title: string,
@@ -9,4 +9,6 @@ export interface MaterialSelectInterface {
     list: Array<any>,
     subKey: string,
     multiple?: boolean,
+    hasError?: boolean,
+    enable?: boolean,
 }

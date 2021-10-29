@@ -8,5 +8,5 @@ export interface CardContainerInterface {
     icon: OverridableComponent<SvgIconTypeMap>,
     children?: React.ReactNode,
     color?: "primary" | "warning" | "success" | "danger" | "info" | "rose",
-    onClick?: () => void,
+    onClick?: string,
 }
