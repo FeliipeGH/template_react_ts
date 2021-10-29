@@ -10,4 +10,5 @@ export interface MaterialTableInterface {
     data: Array<any>,
     createObjectRow: createRowFunction,
     loading: boolean,
+    removeLastColumn?: boolean,
 }

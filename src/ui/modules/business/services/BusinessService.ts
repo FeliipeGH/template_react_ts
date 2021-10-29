@@ -58,10 +58,10 @@ export class BusinessService implements CRUDService {
         }
     }
 
-    async save({token, object: organization}: SaveParams): Promise<boolean> {
+    async save({token, object: business}: SaveParams): Promise<boolean> {
         showLoadingAlert();
         try {
-            await this.crudRepository.save(token, organization);
+            await this.crudRepository.save(token, business);
             closeAlert();
             showGenericAlert("Se ha guardado correctamente",).then();
             return true;

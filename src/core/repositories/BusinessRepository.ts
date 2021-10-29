@@ -6,7 +6,7 @@ import {BusinessModel} from "../models/BusinessModel";
 export class BusinessRepository implements CRUDRepository {
 
     async deleteById(token: string, organizationId: number): Promise<void> {
-        const response = await fetch(GeneralConstants.BASE_URL + "/organizationController/deleteBusinessById/"
+        const response = await fetch(GeneralConstants.BASE_URL + "/businessController/deleteBusinessById/"
             + organizationId, {
             method: "DELETE",
             headers: {

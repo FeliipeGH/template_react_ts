@@ -9,7 +9,13 @@ import {materialTableStyles} from "./styles/MaterialTableStyles";
 
 // @ts-ignore
 const useStyles = makeStyles(materialTableStyles);
-export const MaterialTable = ({columns, data, createObjectRow, loading}: MaterialTableInterface) => {
+export const MaterialTable = ({
+                                  columns,
+                                  data,
+                                  createObjectRow,
+                                  loading,
+                                  removeLastColumn = false
+                              }: MaterialTableInterface) => {
     const classes = useStyles();
     const [listData, setListData] = useState<Array<any>>([]);
     const isMounted = useIsMounted();
@@ -37,6 +43,7 @@ export const MaterialTable = ({columns, data, createObjectRow, loading}: Materia
                     <ReactTable
                         columns={columns}
                         data={listData}
+                        removeLastColumn={removeLastColumn}
                     />
                 ) : (
                     <Typography className={classes.noElements}>

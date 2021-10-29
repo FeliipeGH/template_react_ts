@@ -15,7 +15,7 @@ export const EditDeleteButtonsToTable = ({
                                          }: EditDeleteButtonsToTableInterface) => {
     const classes = useStyles();
     return (
-        <Box>
+        <Box className={classes.content}>
             {
                 showEdit && (
                     <IconButton
